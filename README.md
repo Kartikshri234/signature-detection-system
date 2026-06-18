@@ -85,9 +85,17 @@ pip install -r requirements.txt
 ```
 signature_detection_system/
 │
-├── main.py                 # Main application file
+├── main.py                 # Original Tkinter GUI
+├── api.py                  # New Flask REST API
 ├── requirements.txt        # Python dependencies
 ├── README.md              # This file
+├── FRONTEND_SETUP.md      # Frontend setup guide
+│
+├── frontend/              # React web application
+│   ├── public/            # Static files
+│   ├── src/               # React source code
+│   ├── package.json
+│   └── ...
 │
 └── db/                    # Database folder (auto-created)
     ├── user1.pickle       # Stored signature features
@@ -99,23 +107,40 @@ signature_detection_system/
 
 ## 🚀 How to Run
 
-### Method 1: Using Command Line
-```bash
-# Navigate to project directory
-cd signature_detection_system
+### Method 1: Using the Modern Web Frontend (Recommended) ✨
 
-# Run the application
+**NEW!** We now have a modern React web interface with Flask API backend.
+
+1. **Install dependencies:**
+```bash
+pip install -r requirements.txt
+cd frontend && npm install
+```
+
+2. **Start the backend (Terminal 1):**
+```bash
+python api.py
+```
+
+3. **Start the frontend (Terminal 2):**
+```bash
+cd frontend
+npm start
+```
+
+4. **Open browser:** `http://localhost:3000`
+
+See [FRONTEND_SETUP.md](FRONTEND_SETUP.md) for detailed setup instructions.
+
+### Method 2: Using the Original Tkinter GUI
+
+**Original desktop application using Tkinter:**
+
+```bash
 python main.py
 ```
 
-### Method 2: Using Python IDE
-1. Open `main.py` in your IDE (PyCharm, VS Code, etc.)
-2. Click the "Run" button
-3. Or press F5 (in most IDEs)
-
-### Method 3: Double-click (Windows)
-1. Right-click on `main.py`
-2. Select "Open with" → "Python"
+This is simpler but less feature-rich than the web version.
 
 ---
 
